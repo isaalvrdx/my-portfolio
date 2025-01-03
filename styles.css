@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #FFC436;
+  --secondary-color: #FFF0CE;
+  --background-color: #FFF0CE;
+  --text-color: #0C356A;
+  --accent-color: #FFC436;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+  animation: move-background 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes move-background {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+
+header h1, header p {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 1rem auto 0;
+}
+
+#sobre-mi p {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#proyectos div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+article {
+  background-color: #FFC436;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+article h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+#contacto {
+  background-color: var(--primary-color);
+  color: #0C356A;
+  text-align: center;
+}
+
+#contacto h2 {
+  color: #ffffff;
+}
+
+#contacto a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+
+}
+
+#contacto a:hover {
+  color: #0C356A;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: var(--text-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
